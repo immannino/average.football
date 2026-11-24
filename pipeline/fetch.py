@@ -56,12 +56,35 @@ def fetch_one(job):
 TEAMS_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams"
 
 
+LOGOS = Path(__file__).resolve().parent.parent / "public" / "logos"
+
+
+def self_host(abbr, src):
+    """Download a team logo once into public/logos/ (160px, ~10 KB) and return its site path."""
+    out = LOGOS / f"{abbr}.png"
+    if not out.exists() and src:
+        # the combiner resizes the 500px original to 160px so the site doesn't ship big images
+        url = f"https://a.espncdn.com/combiner/i?img={src.split('espncdn.com')[-1]}&w=160&h=160"
+        for _ in range(3):
+            try:
+                r = requests.get(url, timeout=30)
+                r.raise_for_status()
+                LOGOS.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(r.content)
+                break
+            except requests.RequestException:
+                continue  # a missing logo falls back to the ESPN URL; the next run retries
+    return f"/logos/{abbr}.png" if out.exists() else src
+
+
 def fetch_teams():
     r = requests.get(TEAMS_URL, timeout=30)
     r.raise_for_status()
     teams = [t["team"] for t in r.json()["sports"][0]["leagues"][0]["teams"]]
-    keep = [{"id": t["abbreviation"], "name": t["displayName"], "color": t.get("color"),
-             "logo": next((l["href"] for l in t.get("logos", []) if "default" in l.get("rel", [])), None)} for t in teams]
+    keep = []
+    for t in teams:
+        src = next((l["href"] for l in t.get("logos", []) if "default" in l.get("rel", [])), None)
+        keep.append({"id": t["abbreviation"], "name": t["displayName"], "color": t.get("color"), "logo": self_host(t["abbreviation"], src)})
     (RAW / "teams.json").write_text(json.dumps(sorted(keep, key=lambda x: x["id"]), indent=1))
 
 

@@ -29,7 +29,7 @@ a { color: inherit }
 /* ---- Sky: top of the shell, dissolving to white. pixelated only on this element. */
 .app-shell {
   min-height: 100vh;
-  background: #fff url('/textures/pixel-sky.png') top left / 100% 22rem no-repeat;
+  background: #fff var(--sky, url('/textures/pixel-sky.png')) top left / 100% 22rem no-repeat;
   image-rendering: pixelated;
 }
 img { image-rendering: auto }

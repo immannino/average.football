@@ -14,6 +14,14 @@ const SKIES = [
     // blue base -> violet -> hot pink -> pale pink, sampled from typesafe.ai
     stops: [[0, '#4f9fd0'], [0.3, '#6fb0d8'], [0.5, '#9b6bff'], [0.68, '#f050c8'], [0.86, '#ff7bd8'], [1, '#ffd6f2']],
   },
+  // One tint per color gauntlet, used behind that gauntlet's page: base -> mid -> bright -> pale.
+  ...Object.entries({
+    green: ['#2f8f5b', '#4fb37a', '#8fe08a', '#f2d84a', '#e8ffd0'],
+    orange: ['#d9591e', '#f08a24', '#ffb347', '#ff8fa3', '#ffe6cc'],
+    purple: ['#4b2e8f', '#7a4fd0', '#b06bff', '#f050c8', '#f4d6ff'],
+    red: ['#a31d2b', '#d93a3a', '#ff6b4a', '#ffa94d', '#ffe0d6'],
+    blue: ['#1f4fb0', '#3a82e0', '#5ec4f0', '#9b8cff', '#dcefff'],
+  }).map(([name, c]) => ({ file: `pixel-sky-${name}.png`, seed: `sky-${name}`, stops: c.map((hex, i) => [i / 4, hex]) })),
 ]
 const W = 640
 const H = 300

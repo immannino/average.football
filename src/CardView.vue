@@ -1,7 +1,7 @@
 <script setup>
 // Share cards, screenshotted by scripts/cards.mjs.
 //   #card=watch | e0, e1, ... (digest events) | c0, c1, ... (carousel slides: cover, one per live gauntlet, closer)
-//   optional size suffix: @post (1080x1350, default) | @story (1080x1920) | @square (1080x1080)
+//   optional size suffix: @post (1080x1350, default) | @story (1080x1920) | @square (1080x1080) | @og (1200x630 link preview, base `og`)
 import { ref, computed, onMounted, inject } from 'vue'
 import RibbonBadge from './RibbonBadge.vue'
 import TeamChip from './TeamChip.vue'
@@ -18,10 +18,10 @@ onMounted(async () => {
 
 const parts = computed(() => {
   const [base, size = 'post'] = (props.id || '').split('@')
-  return { base, size: ['post', 'story', 'square'].includes(size) ? size : 'post' }
+  return { base, size: ['post', 'story', 'square', 'og'].includes(size) ? size : 'post' }
 })
 const size = computed(() => parts.value.size)
-const SHOW = { post: { windows: 3, teams: 3, slideTeams: 6 }, story: { windows: 4, teams: 3, slideTeams: 8 }, square: { windows: 2, teams: 2, slideTeams: 4 } }
+const SHOW = { post: { windows: 3, teams: 3, slideTeams: 6 }, story: { windows: 4, teams: 3, slideTeams: 8 }, square: { windows: 2, teams: 2, slideTeams: 4 }, og: {} }
 const show = computed(() => SHOW[size.value])
 
 const season = computed(() => props.seasons[0])
@@ -66,11 +66,18 @@ const pager = computed(() => (slide.value ? `${Number(parts.value.base.slice(1))
     <div class="top">
       <span class="brand"><img src="/favicon.svg" alt="" width="40" />average<span>.football</span></span>
       <span class="when" v-if="pager">{{ pager }}</span>
-      <span class="when" v-else-if="digest">{{ season }} season · as of {{ dt(digest.as_of) }}</span>
+      <span class="when" v-else-if="digest && size !== 'og'">{{ season }} season · as of {{ dt(digest.as_of) }}</span>
     </div>
 
+    <!-- link preview (public/og.png) -->
+    <template v-if="parts.base === 'og'">
+      <h1 class="og-title">Beat every bird, cat, and guy.</h1>
+      <p class="sub">An NFL gauntlet tracker: who has beaten a whole group in one season.</p>
+      <div class="og-rib"><RibbonBadge v-for="x in gauntlets" :key="x.id" :tier="tierOf(rarity[x.id])" :size="46" /></div>
+    </template>
+
     <!-- watch summary -->
-    <template v-if="parts.base === 'watch'">
+    <template v-else-if="parts.base === 'watch'">
       <h1>Gauntlet Watch</h1>
       <p class="sub">{{ watch.teams }} teams still chasing {{ watch.list.length }} gauntlets. Rarest first.</p>
       <div class="win" v-for="x in watch.list.slice(0, show.windows)" :key="x.g.id" :data-title="`${x.g.name.toUpperCase()} GAUNTLET · #${x.h.rank} OF ${gauntlets.length} RAREST`">
@@ -151,6 +158,9 @@ const pager = computed(() => (slide.value ? `${Number(parts.value.base.slice(1))
   background:#fff url('/textures/pixel-sky.png') top left / 100% 700px no-repeat; image-rendering:pixelated }
 .stage.story { height:1920px; padding:200px 56px 48px; background-size:100% 1000px }
 .stage.square { height:1080px; padding:36px 56px; background-size:100% 520px }
+.stage.og { width:1200px; height:630px; padding:36px 56px; background-size:100% 420px }
+.og-title { font-size:92px; margin:50px 0 12px } .og .sub { font-size:32px }
+.og-rib { display:flex; gap:8px; flex-wrap:wrap; background:#fff; padding:14px; border:2px solid var(--line); width:fit-content; max-width:100% }
 .top { display:flex; justify-content:space-between; align-items:center }
 .story .top { position:absolute; top:200px; left:56px; right:56px }
 .story h1 { margin-top:150px }

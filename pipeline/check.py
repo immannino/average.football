@@ -22,6 +22,7 @@ check("status complete iff complete", not q("SELECT 1 FROM gauntlet_results WHER
 check("failed rows name who was missed", not q("SELECT 1 FROM gauntlet_results WHERE status = 'failed' AND lost_to IS NULL"))
 check("in-progress rows have nobody lost", not q("SELECT 1 FROM gauntlet_results WHERE status = 'in-progress' AND lost_to IS NOT NULL"))
 check("past seasons never in-progress", not q("SELECT 1 FROM gauntlet_results WHERE qualifies AND status = 'in-progress' AND season < (SELECT max(season) FROM games)"))
+check("no unplayed games in past seasons", not q("SELECT 1 FROM games WHERE NOT completed AND season < (SELECT max(season) FROM games)"))
 check("a team never needs itself", not q("SELECT 1 FROM gauntlet_results WHERE list_contains(string_split(coalesce(beaten,'') || ',' || coalesce(missing,''), ','), team)"))
 check("known: nobody has completed Bird since 2002", q("SELECT count(*) FROM gauntlet_results WHERE gauntlet='bird' AND complete")[0][0] == 0)
 check("known: 2002 season has 256 regular-season games", q("SELECT count(*) FROM games WHERE season=2002 AND type='reg'")[0][0] == 256)

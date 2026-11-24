@@ -25,11 +25,17 @@ jobs:
         if: github.event_name != 'push'
         run: |
           git config user.name "af-bot"; git config user.email "bot@users.noreply.github.com"
-          git add data/raw data/state public/data
+          git add data/raw data/state public/data public/logos
           if ! git diff --cached --quiet; then git commit -m "chore: refresh data" && git push; fi
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: npm }
       - run: npm ci && npm run build
+      - name: Render share cards
+        if: github.event_name != 'push'
+        run: node scripts/cards.mjs --sizes post,story,square
+      - uses: actions/upload-artifact@v4
+        if: github.event_name != 'push'
+        with: { name: share-cards, path: out/cards, retention-days: 14 }
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }

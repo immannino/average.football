@@ -24,7 +24,12 @@ def load_games():
             done = e["completed"]
             rows[e["id"]] = (e["id"], e["season"], stype, e["date"], h, a,
                              e["home_score"] if done else None, e["away_score"] if done else None, done)
-    return list(rows.values())
+    out = list(rows.values())
+    # A game still unplayed in a past season was postponed (2014 BUF-NYJ snow, 2017 MIA-TB hurricane;
+    # both replayed under another id) or cancelled (2022 CIN-BUF). It is not a game that "still needs
+    # playing", so keeping it would show a stale "next up" and count as a scheduled opponent.
+    latest = max(r[1] for r in out)
+    return [r for r in out if r[8] or r[1] == latest]
 
 
 def export_sqlite(con):

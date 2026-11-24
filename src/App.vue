@@ -31,6 +31,11 @@ const parse = () => {
   return { view: 'overview', id: '' }
 }
 const route = ref(parse())
+// color gauntlets get their own sky tint behind their page; everything else keeps the default
+const sky = computed(() => {
+  const c = route.value.view === 'gauntlet' && route.value.id?.startsWith('color-') ? route.value.id.slice(6) : ''
+  return c ? { '--sky': `url(/textures/pixel-sky-${c}.png)` } : {}
+})
 const onHash = () => (route.value = parse())
 onMounted(async () => {
   window.addEventListener('hashchange', onHash)
@@ -93,7 +98,7 @@ const split = (s) => (s ? s.split(',') : [])
   <div v-if="route.view === 'card'">
     <CardView v-if="!loading" :id="route.id" :gauntlets="gauntlets" :results="results" :seasons="seasons" />
   </div>
-  <div v-else class="app-shell">
+  <div v-else class="app-shell" :style="sky">
   <header class="app-header">
     <a class="app-brand" href="#"><img src="/favicon.svg" alt="" class="logo" width="24" height="24" />average<span>.football</span></a>
     <a class="nav-chip" href="#" :class="{ on: route.view === 'overview' }">Watch</a>
