@@ -22,6 +22,10 @@
 - 👀 **Denver Broncos** is one win from the **WTF** gauntlet (needs NYJ). Next: @ NYJ on 2026-12-13.
 - 👀 **Miami Dolphins** is one win from the **WTF** gauntlet (needs LAC). Next: vs LAC on 2026-12-27.
 - 👀 **New England Patriots** is one win from the **WTF** gauntlet (needs LAC). Next: @ LAC on 2026-11-29.
+- ✗ **Atlanta Falcons** failed the **Banks** gauntlet (missed BAL).
+- ✗ **Carolina Panthers** failed the **Banks** gauntlet (missed CLE).
+- ✗ **New Orleans Saints** failed the **Banks** gauntlet (missed MIN).
+- ✗ **Tampa Bay Buccaneers** failed the **Banks** gauntlet (missed CLE, MIN).
 - ✗ **Arizona Cardinals** failed the **Baseball** gauntlet (missed NYG).
 - ✗ **Dallas Cowboys** failed the **Baseball** gauntlet (missed ARI).
 - ✗ **Carolina Panthers** failed the **Orange** gauntlet (missed CLE, DEN).
