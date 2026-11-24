@@ -170,5 +170,26 @@
    "TEN"
   ],
   "ribbon": "Blue Chip"
+ },
+ {
+  "id": "banks",
+  "name": "Banks",
+  "teams": [
+   "BAL",
+   "CAR",
+   "CLE",
+   "MIN"
+  ],
+  "ribbon": "Bank Shot"
+ },
+ {
+  "id": "cars",
+  "name": "Cars",
+  "teams": [
+   "ATL",
+   "DET",
+   "TEN"
+  ],
+  "ribbon": "Pole Position"
  }
 ]
