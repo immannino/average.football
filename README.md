@@ -15,8 +15,10 @@ and have beaten every one of them in a single season. Live at https://www.averag
   legendary <5%, gold <25%, silver <40%, bronze otherwise, unclaimed if nobody has since 2002 (`src/stats.js`).
 - `build.py` diffs the live season against `data/state/status.json` and writes `public/data/digest.json` / `digest.md`
   (completed, one win away, failed). The scheduled job saves the state (`AF_SAVE_STATE=1`); local runs never do.
-- `npm run cards` renders 1080x1350 share images to `out/cards/` (needs Chrome; set `CHROME=` to override) for Instagram.
-  Caption text is in `digest.md`.
+- `npm run cards` renders share images to `out/cards/<size>/` (needs Chrome; set `CHROME=` to override). Caption text is in `digest.md`.
+  - `npm run cards -- --sizes post,story,square` adds Story (1080x1920) and square (1080x1080) versions (default is post, 1080x1350).
+  - `--only watch|events|carousel` renders one kind; `--max 12` caps event cards. The carousel is a cover, one slide per live
+    gauntlet (rarest first, up to 8, with each team's next games) and a rules closer.
 
 ## Develop
 ```
