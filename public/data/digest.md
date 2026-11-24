@@ -1,0 +1,39 @@
+# Gauntlet digest, 2026 season (as of 2026-11-23) [baseline]
+
+- 🎀 **Los Angeles Rams** completed the **Baseball** gauntlet (Hit for the Cycle), 6-4.
+- 🎀 **New York Giants** completed the **Baseball** gauntlet (Hit for the Cycle), 6-3-1.
+- 🎀 **Buffalo Bills** completed the **Purple** gauntlet (Purple Reign), 9-1.
+- 🎀 **Buffalo Bills** completed the **WTF** gauntlet (WTF Champion), 9-1.
+- 🎀 **Kansas City Chiefs** completed the **WTF** gauntlet (WTF Champion), 8-2.
+- 🎀 **Las Vegas Raiders** completed the **WTF** gauntlet (WTF Champion), 4-7.
+- 🎀 **New York Jets** completed the **WTF** gauntlet (WTF Champion), 3-8.
+- 👀 **Detroit Lions** is one win from the **Baseball** gauntlet (needs NYG). Next: vs NYG on 2026-12-29.
+- 👀 **New Orleans Saints** is one win from the **Baseball** gauntlet (needs ARI). Next: vs ARI on 2026-12-27.
+- 👀 **Seattle Seahawks** is one win from the **Baseball** gauntlet (needs NYG). Next: vs NYG on 2026-12-13.
+- 👀 **San Francisco 49ers** is one win from the **Baseball** gauntlet (needs NYG). Next: @ NYG on 2026-12-06.
+- 👀 **Washington Commanders** is one win from the **Baseball** gauntlet (needs ARI). Next: @ ARI on 2026-11-29.
+- 👀 **Chicago Bears** is one win from the **Green** gauntlet (needs GB). Next: vs GB on 2026-12-25.
+- 👀 **Pittsburgh Steelers** is one win from the **Orange** gauntlet (needs DEN). Next: vs DEN on 2026-11-27.
+- 👀 **Carolina Panthers** is one win from the **Purple** gauntlet (needs MIN). Next: @ MIN on 2026-12-06.
+- 👀 **New York Jets** is one win from the **Guy** gauntlet (needs BUF). Next: @ BUF on 2027-01-10.
+- 👀 **Pittsburgh Steelers** is one win from the **Mythical** gauntlet (needs TEN). Next: @ TEN on 2027-01-03.
+- 👀 **Detroit Lions** is one win from the **New** gauntlet (needs NYG). Next: vs NYG on 2026-12-29.
+- 👀 **Arizona Cardinals** is one win from the **WTF** gauntlet (needs NYJ). Next: vs NYJ on 2026-12-20.
+- 👀 **Denver Broncos** is one win from the **WTF** gauntlet (needs NYJ). Next: @ NYJ on 2026-12-13.
+- 👀 **Miami Dolphins** is one win from the **WTF** gauntlet (needs LAC). Next: vs LAC on 2026-12-27.
+- 👀 **New England Patriots** is one win from the **WTF** gauntlet (needs LAC). Next: @ LAC on 2026-11-29.
+- ✗ **Arizona Cardinals** failed the **Baseball** gauntlet (missed NYG).
+- ✗ **Dallas Cowboys** failed the **Baseball** gauntlet (missed ARI).
+- ✗ **Carolina Panthers** failed the **Orange** gauntlet (missed CLE, DEN).
+- ✗ **Jacksonville Jaguars** failed the **Orange** gauntlet (missed DEN).
+- ✗ **Atlanta Falcons** failed the **Purple** gauntlet (missed BAL).
+- ✗ **Indianapolis Colts** failed the **Purple** gauntlet (missed BAL, MIN).
+- ✗ **New Orleans Saints** failed the **Purple** gauntlet (missed MIN).
+- ✗ **Tampa Bay Buccaneers** failed the **Purple** gauntlet (missed MIN).
+- ✗ **Baltimore Ravens** failed the **Guy** gauntlet (missed BUF).
+- ✗ **Houston Texans** failed the **Guy** gauntlet (missed CLE, BUF).
+- ✗ **Las Vegas Raiders** failed the **Guy** gauntlet (missed BUF).
+- ✗ **Baltimore Ravens** failed the **Mythical** gauntlet (missed NO).
+- ✗ **Cleveland Browns** failed the **Mythical** gauntlet (missed NO).
+- ✗ **New York Giants** failed the **Mythical** gauntlet (missed NO).
+- ✗ **Los Angeles Chargers** failed the **WTF** gauntlet (missed NYJ).

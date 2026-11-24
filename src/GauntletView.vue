@@ -1,11 +1,15 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, inject } from 'vue'
+import RibbonBadge from './RibbonBadge.vue'
+import { tierOf, TIERS, tierNote } from './stats.js'
 import TeamChip from './TeamChip.vue'
 const props = defineProps({ gauntlets: Array, results: Array, seasons: Array, initial: String })
 const id = ref(props.gauntlets.some((g) => g.id === props.initial) ? props.initial : props.gauntlets[0].id)
 watch(() => props.initial, (v) => v && props.gauntlets.some((g) => g.id === v) && (id.value = v))
 watch(id, (v) => (location.hash = `#gauntlet=${v}`))
 
+const rarity = inject('rarity', ref({}))
+const tier = computed(() => tierOf(rarity.value[id.value]))
 const g = computed(() => props.gauntlets.find((x) => x.id === id.value))
 const latest = computed(() => props.seasons[0])
 const rows = computed(() => props.results.filter((r) => r.gauntlet === id.value))
@@ -44,6 +48,10 @@ const rec = (t) => (t ? `${t.wins}-${t.losses}${t.ties ? '-' + t.ties : ''}` : '
     </label>
 
     <section class="explain card">
+      <div class="ribbon-row" :title="tierNote">
+        <RibbonBadge :tier="tier" :size="40" />
+        <div><b>{{ g.ribbon }}</b><small>{{ TIERS[tier].label }} ribbon{{ tier === 'unclaimed' ? ': nobody has earned it since 2002' : '' }}</small></div>
+      </div>
       
       <p class="teams"><TeamChip v-for="t in g.teams" :key="t" :team="t" /></p>
       <p>A team completes it by <b>beating every one of these {{ g.teams.length }} teams in the same season</b>
@@ -87,6 +95,8 @@ const rec = (t) => (t ? `${t.wins}-${t.losses}${t.ties ? '-' + t.ties : ''}` : '
 </template>
 
 <style scoped>
+.ribbon-row { display:flex; gap:12px; align-items:center; margin-bottom:8px } .ribbon-row b { font-size:1.15rem } .ribbon-row small { display:block; color:var(--muted); font-size:.8rem }
+
 .gv { display:grid; gap:16px } select { font:inherit; margin-left:6px }
 .card { background:var(--card); border:1px solid var(--line); border-radius:0; padding:16px; overflow-x:auto }
 h2 { margin:0 0 6px; font-size:1.2rem } .teams { color:var(--muted) } p { margin:6px 0; font-size:.9rem }
