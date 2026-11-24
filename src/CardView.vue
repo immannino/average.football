@@ -73,7 +73,7 @@ const pager = computed(() => (slide.value ? `${Number(parts.value.base.slice(1))
     <template v-if="parts.base === 'og'">
       <h1 class="og-title">Beat every bird, cat, and guy.</h1>
       <p class="sub">An NFL gauntlet tracker: who has beaten a whole group in one season.</p>
-      <div class="og-rib"><RibbonBadge v-for="x in gauntlets" :key="x.id" :tier="tierOf(rarity[x.id])" :size="54" /></div>
+      <div class="og-rib"><RibbonBadge v-for="x in gauntlets" :key="x.id" :tier="tierOf(rarity[x.id])" :size="46" /></div>
     </template>
 
     <!-- watch summary -->
@@ -160,7 +160,7 @@ const pager = computed(() => (slide.value ? `${Number(parts.value.base.slice(1))
 .stage.square { height:1080px; padding:36px 56px; background-size:100% 520px }
 .stage.og { width:1200px; height:630px; padding:36px 56px; background-size:100% 420px }
 .og-title { font-size:92px; margin:50px 0 12px } .og .sub { font-size:32px }
-.og-rib { display:flex; gap:12px; flex-wrap:wrap; background:#fff; padding:14px; border:2px solid var(--line); width:fit-content; max-width:100% }
+.og-rib { display:flex; gap:8px; flex-wrap:wrap; background:#fff; padding:14px; border:2px solid var(--line); width:fit-content; max-width:100% }
 .top { display:flex; justify-content:space-between; align-items:center }
 .story .top { position:absolute; top:200px; left:56px; right:56px }
 .story h1 { margin-top:150px }
