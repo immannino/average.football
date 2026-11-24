@@ -1,7 +1,7 @@
 # average.football
 
 Tracking the NFL's gauntlets: which teams are chasing a group of teams (birds, cats, mythical creatures, guys, ...)
-and have beaten every one of them in a single season. Live at https://average.football
+and have beaten every one of them in a single season. Live at https://www.average.football
 
 ## How it works
 - `pipeline/fetch.py` pulls scoreboards (2002 on) from ESPN into `data/raw/` (small, committed cache) and team logos/names.
