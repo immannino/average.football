@@ -1,0 +1,158 @@
+[
+ {
+  "id": "bird",
+  "name": "Bird",
+  "teams": [
+   "SEA",
+   "PHI",
+   "BAL",
+   "ATL",
+   "ARI"
+  ]
+ },
+ {
+  "id": "cat",
+  "name": "Cat",
+  "teams": [
+   "CIN",
+   "CAR",
+   "JAX",
+   "DET"
+  ]
+ },
+ {
+  "id": "mammals",
+  "name": "Other Mammals",
+  "teams": [
+   "CHI",
+   "BUF",
+   "LAR",
+   "IND",
+   "DEN"
+  ]
+ },
+ {
+  "id": "old-west",
+  "name": "Old West",
+  "teams": [
+   "DAL",
+   "KC",
+   "HOU",
+   "SF"
+  ]
+ },
+ {
+  "id": "sea",
+  "name": "Sea Going",
+  "teams": [
+   "TB",
+   "LV",
+   "MIA",
+   "MIN"
+  ]
+ },
+ {
+  "id": "mythical",
+  "name": "Mythical",
+  "teams": [
+   "CLE",
+   "TEN",
+   "NO"
+  ]
+ },
+ {
+  "id": "professions",
+  "name": "Professions",
+  "teams": [
+   "NE",
+   "PIT",
+   "WSH",
+   "GB"
+  ]
+ },
+ {
+  "id": "wtf",
+  "name": "WTF",
+  "teams": [
+   "NYJ",
+   "LAC"
+  ]
+ },
+ {
+  "id": "baseball",
+  "name": "Baseball",
+  "teams": [
+   "NYG",
+   "ARI"
+  ]
+ },
+ {
+  "id": "guy",
+  "name": "Guy",
+  "teams": [
+   "CLE",
+   "BUF"
+  ]
+ },
+ {
+  "id": "new",
+  "name": "New",
+  "teams": [
+   "NYG",
+   "NYJ",
+   "NE",
+   "NO"
+  ]
+ },
+ {
+  "id": "color-green",
+  "name": "Green",
+  "teams": [
+   "PHI",
+   "NYJ",
+   "GB"
+  ]
+ },
+ {
+  "id": "color-orange",
+  "name": "Orange",
+  "teams": [
+   "CIN",
+   "CLE",
+   "DEN"
+  ]
+ },
+ {
+  "id": "color-purple",
+  "name": "Purple",
+  "teams": [
+   "BAL",
+   "MIN"
+  ]
+ },
+ {
+  "id": "color-red",
+  "name": "Red",
+  "teams": [
+   "ARI",
+   "ATL",
+   "KC",
+   "SF",
+   "TB"
+  ]
+ },
+ {
+  "id": "color-blue",
+  "name": "Blue",
+  "teams": [
+   "BUF",
+   "DAL",
+   "DET",
+   "IND",
+   "LAC",
+   "LAR",
+   "NYG",
+   "TEN"
+  ]
+ }
+]
