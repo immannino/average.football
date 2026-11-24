@@ -18,12 +18,14 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: uv run python pipeline/fetch.py
       - run: uv run python pipeline/build.py
+        env:
+          AF_SAVE_STATE: ${{ github.event_name != 'push' && '1' || '0' }}
       - run: uv run python pipeline/check.py
       - name: Commit refreshed data
         if: github.event_name != 'push'
         run: |
           git config user.name "af-bot"; git config user.email "bot@users.noreply.github.com"
-          git add data/raw public/data
+          git add data/raw data/state public/data
           if ! git diff --cached --quiet; then git commit -m "chore: refresh data" && git push; fi
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: npm }

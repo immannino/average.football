@@ -28,3 +28,6 @@ dist-ssr
 *.duckdb.wal
 .venv/
 __pycache__/
+
+out/
+.vite/

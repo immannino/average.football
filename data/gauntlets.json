@@ -8,7 +8,8 @@
    "BAL",
    "ATL",
    "ARI"
-  ]
+  ],
+  "ribbon": "The Whole Aviary"
  },
  {
   "id": "cat",
@@ -18,7 +19,8 @@
    "CAR",
    "JAX",
    "DET"
-  ]
+  ],
+  "ribbon": "Cat's Meow"
  },
  {
   "id": "mammals",
@@ -29,7 +31,8 @@
    "LAR",
    "IND",
    "DEN"
-  ]
+  ],
+  "ribbon": "Mammal Mauler"
  },
  {
   "id": "old-west",
@@ -39,7 +42,8 @@
    "KC",
    "HOU",
    "SF"
-  ]
+  ],
+  "ribbon": "Gunslinger"
  },
  {
   "id": "sea",
@@ -49,7 +53,8 @@
    "LV",
    "MIA",
    "MIN"
-  ]
+  ],
+  "ribbon": "Walked the Plank"
  },
  {
   "id": "mythical",
@@ -58,7 +63,8 @@
    "CLE",
    "TEN",
    "NO"
-  ]
+  ],
+  "ribbon": "Myth Buster"
  },
  {
   "id": "professions",
@@ -68,7 +74,8 @@
    "PIT",
    "WSH",
    "GB"
-  ]
+  ],
+  "ribbon": "Union Card"
  },
  {
   "id": "wtf",
@@ -76,7 +83,8 @@
   "teams": [
    "NYJ",
    "LAC"
-  ]
+  ],
+  "ribbon": "WTF Champion"
  },
  {
   "id": "baseball",
@@ -84,7 +92,8 @@
   "teams": [
    "NYG",
    "ARI"
-  ]
+  ],
+  "ribbon": "Hit for the Cycle"
  },
  {
   "id": "guy",
@@ -92,7 +101,8 @@
   "teams": [
    "CLE",
    "BUF"
-  ]
+  ],
+  "ribbon": "Guy's Guy"
  },
  {
   "id": "new",
@@ -102,7 +112,8 @@
    "NYJ",
    "NE",
    "NO"
-  ]
+  ],
+  "ribbon": "Brand New Day"
  },
  {
   "id": "color-green",
@@ -111,7 +122,8 @@
    "PHI",
    "NYJ",
    "GB"
-  ]
+  ],
+  "ribbon": "Green Machine"
  },
  {
   "id": "color-orange",
@@ -120,7 +132,8 @@
    "CIN",
    "CLE",
    "DEN"
-  ]
+  ],
+  "ribbon": "Creamsicle"
  },
  {
   "id": "color-purple",
@@ -128,7 +141,8 @@
   "teams": [
    "BAL",
    "MIN"
-  ]
+  ],
+  "ribbon": "Purple Reign"
  },
  {
   "id": "color-red",
@@ -139,7 +153,8 @@
    "KC",
    "SF",
    "TB"
-  ]
+  ],
+  "ribbon": "Code Red"
  },
  {
   "id": "color-blue",
@@ -153,6 +168,7 @@
    "LAR",
    "NYG",
    "TEN"
-  ]
+  ],
+  "ribbon": "Blue Chip"
  }
 ]

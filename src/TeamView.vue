@@ -1,5 +1,7 @@
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, inject } from 'vue'
+import RibbonBadge from './RibbonBadge.vue'
+import { tierOf, tierNote } from './stats.js'
 import { teamName } from './teamNames.js'
 import OpponentRows from './OpponentRows.vue'
 import { loadGames, teamGames, opponentRows } from './games.js'
@@ -10,6 +12,17 @@ const season = ref(props.seasons[0])
 watch(() => props.initial, (v) => v && props.teams.includes(v) && (team.value = v))
 watch(team, (t) => (location.hash = `#team=${t}`))
 
+const rarity = inject('rarity', ref({}))
+const shelf = computed(() => {
+  const mine = props.results.filter((r) => r.team === team.value && r.complete)
+  const earned = [], open = []
+  props.gauntlets.forEach((g) => {
+    const years = mine.filter((r) => r.gauntlet === g.id).map((r) => r.season).sort((a, b) => a - b)
+    const tier = tierOf(rarity.value[g.id])
+    ;(years.length ? earned : open).push({ g, years, tier })
+  })
+  return { earned: earned.sort((a, b) => b.years.length - a.years.length), open }
+})
 const games = ref(null)
 onMounted(async () => (games.value = await loadGames()))
 
@@ -36,6 +49,19 @@ const label = { complete: 'Complete', 'in-progress': 'In progress', failed: 'Fai
       <label class="chip-label inline">Team <select v-model="team"><option v-for="t in teams" :key="t" :value="t">{{ teamName(t) }}</option></select></label>
       <label class="chip-label inline">Season <select v-model="season"><option v-for="s in seasons" :key="s">{{ s }}</option></select></label>
     </div>
+    <section class="shelf window" :data-title="`${teamName(team).toUpperCase()} · RIBBONS ${shelf.earned.length}/${gauntlets.length}`">
+      <div class="earned">
+        <div v-for="x in shelf.earned" :key="x.g.id" class="rib" :title="tierNote">
+          <RibbonBadge :tier="x.tier" :size="32" />
+          <div>
+            <b>{{ x.g.ribbon }}</b> <span v-if="x.years.length > 1" class="x">×{{ x.years.length }}</span>
+            <small>{{ x.g.name }} · {{ x.years.join(', ') }}</small>
+          </div>
+        </div>
+        <p v-if="!shelf.earned.length" class="n">No ribbons yet. {{ teamName(team) }} hasn't completed a gauntlet since 2002.</p>
+      </div>
+      <p v-if="shelf.open.length" class="open">Still to earn: <span v-for="x in shelf.open" :key="x.g.id" class="o"><RibbonBadge tier="unclaimed" :size="10" /> {{ x.g.ribbon }}</span></p>
+    </section>
     <p v-if="!rows.length" class="empty">{{ team }} didn't play every team in any gauntlet in {{ season }}.</p>
     <article v-for="x in rows" :key="x.g.id" class="g" :class="x.status">
       <div class="top">
@@ -55,6 +81,11 @@ const label = { complete: 'Complete', 'in-progress': 'In progress', failed: 'Fai
 </template>
 
 <style scoped>
+.shelf { grid-column:1/-1 } .earned { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr)); gap:8px }
+.rib { display:flex; gap:10px; align-items:center; background:#fff; border:1px solid var(--line); padding:8px 10px } .rib small { display:block; color:var(--muted); font-size:.74rem }
+.x { font-family:var(--font-mono); font-size:.8rem; background:var(--fg); color:#fff; padding:0 5px }
+.open { font-size:.78rem; margin:10px 0 0; color:#3d3d3d } .o { display:inline-block; margin:2px 10px 2px 0; white-space:nowrap }
+
 .pick { display:flex; gap:16px; margin-bottom:12px; flex-wrap:wrap } select { font:inherit; margin-left:6px }
 .tv { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(380px,100%),1fr)); gap:14px }
 .pick { grid-column:1/-1 }

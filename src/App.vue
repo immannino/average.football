@@ -1,11 +1,14 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, provide } from 'vue'
+import RibbonBadge from './RibbonBadge.vue'
+import { tierOf } from './stats.js'
 import TeamView from './TeamView.vue'
 import GauntletView from './GauntletView.vue'
 import GauntletTable from './GauntletTable.vue'
 import TeamChip from './TeamChip.vue'
 import OpponentRows from './OpponentRows.vue'
 import { loadGames } from './games.js'
+import CardView from './CardView.vue'
 import DataPage from './DataPage.vue'
 import GauntletList from './GauntletList.vue'
 import TeamList from './TeamList.vue'
@@ -20,6 +23,7 @@ provide('logos', logos)
 const parse = () => {
   const [k, v] = location.hash.slice(1).split('=')
   if (k === 'team' && v) return { view: 'team', id: v }
+  if (k === 'card') return { view: 'card', id: v }
   if (k === 'data') return { view: 'data', id: '' }
   if (k === 'teams') return { view: 'teams', id: '' }
   if (k === 'gauntlet' && v) return { view: 'gauntlet', id: v }
@@ -71,6 +75,7 @@ const rarity = computed(() => {
   order.forEach((id, i) => (out[id].rank = i + 1))
   return out
 })
+provide('rarity', rarity)
 const onBoard = computed(() => cards.value.filter((c) => c.on).sort((a, b) => a.h.rank - b.h.rank))
 const watchTeams = computed(() => new Set(onBoard.value.flatMap((c) => c.alive.map((r) => r.team))).size)
 const mode = ref((() => { try { return new URLSearchParams(location.search).get('mode') || localStorage.getItem('af-mode') || 'cards' } catch { return 'cards' } })())
@@ -85,7 +90,10 @@ const split = (s) => (s ? s.split(',') : [])
 </script>
 
 <template>
-  <div class="app-shell">
+  <div v-if="route.view === 'card'">
+    <CardView v-if="!loading" :id="route.id" :gauntlets="gauntlets" :results="results" :seasons="seasons" />
+  </div>
+  <div v-else class="app-shell">
   <header class="app-header">
     <a class="app-brand" href="#"><img src="/favicon.svg" alt="" class="logo" width="24" height="24" />average<span>.football</span></a>
     <a class="nav-chip" href="#" :class="{ on: route.view === 'overview' }">Watch</a>
@@ -143,10 +151,10 @@ const split = (s) => (s ? s.split(',') : [])
     <section v-for="c in (mode === 'cards' ? onBoard : [])" :key="c.id" class="window" :class="c.done.length ? 'done' : 'live'"
       :data-title="`${c.name.toUpperCase()} GAUNTLET · #${c.h.rank} OF ${gauntlets.length} RAREST`">
       <h2>
-        <a :href="`#gauntlet=${c.id}`">{{ c.name }}</a>
+        <a :href="`#gauntlet=${c.id}`"><RibbonBadge :tier="tierOf(c.h)" :size="18" /> {{ c.name }}</a>
         <span class="badge" :class="c.done.length ? 'b-done' : 'b-live'">{{ c.done.length ? 'COMPLETE' : 'ON WATCH' }}</span>
       </h2>
-      <p class="stat">Done {{ c.h.done }} time{{ c.h.done === 1 ? '' : 's' }} in {{ c.h.attempts }} attempts since 2002.</p>
+      <p class="stat">Ribbon: <b>{{ c.ribbon }}</b>. Done {{ c.h.done }} time{{ c.h.done === 1 ? '' : 's' }} in {{ c.h.attempts }} attempts since 2002.</p>
       <p class="teams">Must beat all {{ c.teams.length }}:
         <TeamChip v-for="t in c.teams" :key="t" :team="t" /></p>
       <ul v-if="c.done.length">
