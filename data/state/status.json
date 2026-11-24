@@ -1,0 +1,227 @@
+{
+"banks|ATL": {
+"beaten": 0,
+"required": 4,
+"status": "failed"
+},
+"banks|CAR": {
+"beaten": 1,
+"required": 3,
+"status": "failed"
+},
+"banks|NO": {
+"beaten": 2,
+"required": 4,
+"status": "failed"
+},
+"banks|TB": {
+"beaten": 1,
+"required": 4,
+"status": "failed"
+},
+"baseball|ARI": {
+"beaten": 0,
+"required": 1,
+"status": "failed"
+},
+"baseball|DAL": {
+"beaten": 0,
+"required": 2,
+"status": "failed"
+},
+"baseball|DET": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"baseball|LAR": {
+"beaten": 2,
+"required": 2,
+"status": "complete"
+},
+"baseball|NO": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"baseball|NYG": {
+"beaten": 1,
+"required": 1,
+"status": "complete"
+},
+"baseball|PHI": {
+"beaten": 0,
+"required": 2,
+"status": "in-progress"
+},
+"baseball|SEA": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"baseball|SF": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"baseball|WSH": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"cars|DET": {
+"beaten": 0,
+"required": 2,
+"status": "in-progress"
+},
+"color-green|CHI": {
+"beaten": 2,
+"required": 3,
+"status": "in-progress"
+},
+"color-orange|CAR": {
+"beaten": 0,
+"required": 3,
+"status": "failed"
+},
+"color-orange|JAX": {
+"beaten": 2,
+"required": 3,
+"status": "failed"
+},
+"color-orange|PIT": {
+"beaten": 2,
+"required": 3,
+"status": "in-progress"
+},
+"color-purple|ATL": {
+"beaten": 0,
+"required": 2,
+"status": "failed"
+},
+"color-purple|BUF": {
+"beaten": 2,
+"required": 2,
+"status": "complete"
+},
+"color-purple|CAR": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"color-purple|IND": {
+"beaten": 0,
+"required": 2,
+"status": "failed"
+},
+"color-purple|NO": {
+"beaten": 1,
+"required": 2,
+"status": "failed"
+},
+"color-purple|TB": {
+"beaten": 0,
+"required": 2,
+"status": "failed"
+},
+"guy|BAL": {
+"beaten": 0,
+"required": 2,
+"status": "failed"
+},
+"guy|HOU": {
+"beaten": 0,
+"required": 2,
+"status": "failed"
+},
+"guy|LV": {
+"beaten": 0,
+"required": 2,
+"status": "failed"
+},
+"guy|NYJ": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"mythical|BAL": {
+"beaten": 1,
+"required": 3,
+"status": "failed"
+},
+"mythical|CIN": {
+"beaten": 1,
+"required": 3,
+"status": "in-progress"
+},
+"mythical|CLE": {
+"beaten": 1,
+"required": 2,
+"status": "failed"
+},
+"mythical|LV": {
+"beaten": 1,
+"required": 3,
+"status": "in-progress"
+},
+"mythical|NYG": {
+"beaten": 1,
+"required": 3,
+"status": "failed"
+},
+"mythical|PIT": {
+"beaten": 2,
+"required": 3,
+"status": "in-progress"
+},
+"new|DET": {
+"beaten": 3,
+"required": 4,
+"status": "in-progress"
+},
+"wtf|ARI": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"wtf|BUF": {
+"beaten": 2,
+"required": 2,
+"status": "complete"
+},
+"wtf|DEN": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"wtf|KC": {
+"beaten": 2,
+"required": 2,
+"status": "complete"
+},
+"wtf|LAC": {
+"beaten": 0,
+"required": 1,
+"status": "failed"
+},
+"wtf|LV": {
+"beaten": 2,
+"required": 2,
+"status": "complete"
+},
+"wtf|MIA": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"wtf|NE": {
+"beaten": 1,
+"required": 2,
+"status": "in-progress"
+},
+"wtf|NYJ": {
+"beaten": 1,
+"required": 1,
+"status": "complete"
+}
+}

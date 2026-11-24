@@ -773,7 +773,7 @@ season,team,wins,losses,ties,playoff_games,playoff_wins,champion
 2026,BUF,9,1,0,0,0,false
 2026,CAR,5,5,0,0,0,false
 2026,CHI,8,2,0,0,0,false
-2026,CIN,7,2,0,0,0,false
+2026,CIN,7,3,0,0,0,false
 2026,CLE,6,4,0,0,0,false
 2026,DAL,5,6,0,0,0,false
 2026,DEN,8,2,0,0,0,false
@@ -798,4 +798,4 @@ season,team,wins,losses,ties,playoff_games,playoff_wins,champion
 2026,SF,9,1,0,0,0,false
 2026,TB,3,7,0,0,0,false
 2026,TEN,1,9,0,0,0,false
-2026,WSH,3,5,1,0,0,false
+2026,WSH,4,5,1,0,0,false
