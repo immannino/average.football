@@ -1,4 +1,6 @@
 season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champion
+2002,banks,CAR,true,7,9,0,0,0,false
+2002,banks,TB,false,12,4,0,3,3,true
 2002,baseball,ARI,true,5,11,0,0,0,false
 2002,baseball,PHI,false,12,4,0,2,1,false
 2002,baseball,SF,false,10,6,0,2,1,false
@@ -25,6 +27,7 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2003,guy,NE,false,14,2,0,3,3,true
 2003,mythical,IND,false,12,4,0,3,2,false
 2003,wtf,MIA,false,10,6,0,0,0,false
+2004,banks,PHI,false,13,3,0,3,2,false
 2004,baseball,ARI,true,6,10,0,0,0,false
 2004,baseball,ATL,false,11,5,0,2,1,false
 2004,baseball,DET,false,6,10,0,0,0,false
@@ -104,6 +107,8 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2011,baseball,SEA,false,7,9,0,0,0,false
 2011,baseball,SF,false,13,3,0,2,1,false
 2011,baseball,WSH,false,5,11,0,0,0,false
+2011,cars,ATL,true,10,6,0,1,0,false
+2011,cars,NO,false,13,3,0,2,1,false
 2011,color-green,NYG,false,9,7,0,4,4,true
 2011,color-purple,LAC,false,8,8,0,0,0,false
 2011,guy,CIN,false,9,7,0,1,0,false
@@ -121,6 +126,7 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2012,wtf,LAC,true,7,9,0,0,0,false
 2013,baseball,PHI,false,10,6,0,1,0,false
 2013,baseball,SEA,false,13,3,0,3,3,true
+2013,cars,ARI,false,10,6,0,0,0,false
 2013,color-purple,BAL,true,8,8,0,0,0,false
 2013,color-purple,CHI,false,8,8,0,0,0,false
 2013,color-purple,CIN,false,11,5,0,1,0,false
@@ -153,6 +159,7 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2014,wtf,LAC,true,9,7,0,0,0,false
 2014,wtf,MIA,false,8,8,0,0,0,false
 2014,wtf,NE,false,12,4,0,3,3,true
+2015,banks,DEN,false,12,4,0,3,3,true
 2015,baseball,CAR,false,15,1,0,3,2,false
 2015,color-orange,DEN,true,12,4,0,3,3,true
 2015,color-orange,PIT,false,10,6,0,2,1,false
@@ -195,6 +202,7 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2017,wtf,LAC,true,9,7,0,0,0,false
 2017,wtf,MIA,false,6,10,0,0,0,false
 2017,wtf,NE,false,13,3,0,3,2,false
+2018,banks,NO,false,13,3,0,2,1,false
 2018,baseball,ATL,false,7,9,0,0,0,false
 2018,baseball,WSH,false,7,9,0,0,0,false
 2018,color-green,MIN,false,8,7,1,0,0,false
@@ -216,6 +224,7 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2020,baseball,ARI,true,8,8,0,0,0,false
 2020,baseball,LAR,false,10,6,0,2,1,false
 2020,baseball,SF,false,6,10,0,0,0,false
+2020,cars,GB,false,13,3,0,2,1,false
 2020,color-orange,PIT,false,12,4,0,1,0,false
 2020,color-purple,TEN,false,11,5,0,1,0,false
 2020,guy,KC,false,14,2,0,3,2,false
@@ -271,6 +280,7 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2024,baseball,CAR,false,5,12,0,0,0,false
 2024,baseball,MIN,false,14,3,0,1,0,false
 2024,baseball,WSH,false,12,5,0,3,2,false
+2024,cars,WSH,false,12,5,0,3,2,false
 2024,color-orange,BAL,false,12,5,0,2,1,false
 2024,color-orange,CIN,true,9,8,0,0,0,false
 2024,color-orange,KC,false,15,2,0,3,2,false
