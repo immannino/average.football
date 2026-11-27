@@ -306,10 +306,10 @@ season,gauntlet,team,is_member,wins,losses,ties,playoff_games,playoff_wins,champ
 2025,wtf,DEN,false,14,3,0,2,1,false
 2025,wtf,JAX,false,13,4,0,1,0,false
 2025,wtf,NE,false,14,3,0,4,3,false
-2026,baseball,LAR,false,6,4,0,0,0,false
+2026,baseball,LAR,false,7,4,0,0,0,false
 2026,baseball,NYG,true,6,3,1,0,0,false
-2026,color-purple,BUF,false,9,1,0,0,0,false
-2026,wtf,BUF,false,9,1,0,0,0,false
-2026,wtf,KC,false,8,2,0,0,0,false
+2026,color-purple,BUF,false,10,1,0,0,0,false
+2026,wtf,BUF,false,10,1,0,0,0,false
+2026,wtf,KC,false,8,3,0,0,0,false
 2026,wtf,LV,false,4,7,0,0,0,false
 2026,wtf,NYJ,true,3,8,0,0,0,false
